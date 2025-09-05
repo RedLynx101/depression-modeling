@@ -4,7 +4,7 @@
 # Date: 2025-09-04
 # Note: AI was used to help with the creation and editing of this code. 
 # You may assume that AI wrote all the text, and I have approved it. 
-# Models used: GPT 5 and Claude 4.1.
+# Models used: GPT 5.
 #
 # Summary: Compute feature-wise R^2 (univariate) against a depression target
 # and the overall multivariate model R^2. Saves a CSV ranking and prints a

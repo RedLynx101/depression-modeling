@@ -4,7 +4,7 @@
 # Date: 2025-09-04
 # Note: AI was used to help with the creation and editing of this code. 
 # You may assume that AI wrote all the text, and I have approved it. 
-# Models used: GPT 5 and Claude 4.1.
+# Models used: GPT 5.
 #
 # Summary: Lightweight utilities to find/load the Student Stress datasets CSV,
 # perform quick cleaning, print data summaries, and generate common EDA plots.
