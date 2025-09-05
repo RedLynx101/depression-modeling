@@ -272,7 +272,7 @@ def _plot_cv_results(cv_results: pd.DataFrame, save_dir: str) -> str:
     os.makedirs(save_dir, exist_ok=True)
     plt.figure(figsize=(8, 5))
     # Draw bars first
-    ax = sns.barplot(data=cv_results, x="cv_r2_mean", y="model", orient="h", ci=None)
+    ax = sns.barplot(data=cv_results, x="cv_r2_mean", y="model", orient="h", errorbar=None)
     # Overlay error bars (robust to single-row case and NaNs)
     means = cv_results["cv_r2_mean"].astype(float).values
     stds = cv_results["cv_r2_std"].astype(float).values if "cv_r2_std" in cv_results.columns else np.zeros_like(means)
