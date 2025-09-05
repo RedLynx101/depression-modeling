@@ -2,6 +2,9 @@
 /data/
 /Student Stress Monitoring Datasets/
 
+# Data files
+*.csv
+
 # Analysis outputs
 /eda_output/
 
