@@ -1,0 +1,33 @@
+# Data directories (do not commit raw data)
+/data/
+/Student Stress Monitoring Datasets/
+
+# Analysis outputs
+/eda_output/
+
+# Models and artifacts
+*.joblib
+*.pkl
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# Environments
+.venv/
+.env
+.ENV
+env/
+venv/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+logs/
+*.log

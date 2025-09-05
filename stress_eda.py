@@ -48,19 +48,25 @@ def find_stress_csv(base_dir: Optional[str] = None) -> Optional[str]:
     """Find the stress dataset CSV path.
 
     Searches for likely stress CSVs in a sibling folder named
-    'Student Stress Monitoring Datasets/' relative to the given base_dir
-    (or current working directory if not provided). Returns the first
-    match based on a priority order.
+    'data/' (preferred) or 'Student Stress Monitoring Datasets/' relative
+    to the given base_dir (or current working directory if not provided).
+    Returns the first match based on a priority order.
     """
     if base_dir is None:
         base_dir = os.getcwd()
 
-    candidate_dir = os.path.join(base_dir, "Student Stress Monitoring Datasets")
-    if not os.path.isdir(candidate_dir):
-        # Fallback: search recursively under base_dir
-        search_dirs: List[str] = [base_dir]
-    else:
-        search_dirs = [candidate_dir]
+    data_dir = os.path.join(base_dir, "data")
+    legacy_dir = os.path.join(base_dir, "Student Stress Monitoring Datasets")
+    search_dirs: List[str] = []
+    # Prefer the new cleaned repository location first
+    if os.path.isdir(data_dir):
+        search_dirs.append(data_dir)
+    # Backward compatibility for existing folder name
+    if os.path.isdir(legacy_dir):
+        search_dirs.append(legacy_dir)
+    # Fallback: search recursively under base_dir if neither exists
+    if not search_dirs:
+        search_dirs = [base_dir]
 
     # Priority file names
     priority_names = [
